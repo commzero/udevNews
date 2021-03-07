@@ -7,6 +7,6 @@ import './styles/resets.scss';
 import './styles/base.scss';
 
 export {
-    checkForURL,
+    checkForName,
     handleSubmit
    }

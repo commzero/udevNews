@@ -14,7 +14,7 @@ function handleSubmit(event) {
                 document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
                 document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
                 document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
-                document.getElementById('score').innerHTML = 'Score: ' + scoreCheck(res.score_tag);
+                document.getElementById('score').innerHTML = 'Score: ' + res.score_tag;
                 document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
             });
     } else {
@@ -22,28 +22,4 @@ function handleSubmit(event) {
     }
 }
 
-const scoreCheck = (score) => {
-    let display;
-    switch (score) {
-        case 'P+':
-            display = 'strong positive score';
-            break;
-        case 'P':
-            display = 'positive score';
-            break;
-        case 'NEW':
-            display = 'neutral score';
-            break;
-        case 'N':
-            display = 'negative score';
-            break;
-        case 'N+':
-            display = 'strong negative score';
-            break;
-        case 'NONE':
-            display = 'no score';
-    }
-    return display;
-}
-
-export { handleSubmit, scoreCheck };
+export { handleSubmit };
